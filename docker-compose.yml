@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres
+    container_name: container_postgressql
+    restart: always
+    ports:
+      - "54320:5432"
+    environment:
+      POSTGRES_DB: db_pichincha
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: container_pgadmin
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+
+  mysql:
+    image: mysql
+    container_name: container_mysql
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=bd_pichincha
+      - MYSQL_ROOT_PASSWORD=mauFJcuf5dhRMQrjj
+    ports:
+      - '3306:3306'
+    volumes:
+      - db:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  db:
+    driver: local
