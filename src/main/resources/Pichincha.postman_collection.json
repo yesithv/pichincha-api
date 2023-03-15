@@ -1,0 +1,647 @@
+{
+	"info": {
+		"_postman_id": "a5abbfe0-ee37-4816-b867-72019e4c2b07",
+		"name": "Pichincha",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17690723"
+	},
+	"item": [
+		{
+			"name": "Save Customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"customer_token\", response.idCustomer);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"Jaime Jhon Valencia\",\r\n\t\"gender\": \"MALE\",\r\n\t\"dateOfBirth\": \"1985-07-05\",\r\n\t\"documentType\": \"CITIZENSHIP_CARD\",\r\n\t\"documentNumber\": 91323232323,\r\n\t\"address\": \"Calle siempre viva\",\r\n\t\"phoneNumber\": \"392883920002\",\r\n\t\"password\": \"adfHIBI(983'03Kjdo9330\",\r\n\t\"customerStatus\": \"ACTIVE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8001/pichincha-api/v1/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"pichincha-api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Yesith Valencia\",\r\n\t\"gender\": \"MALE\",\r\n\t\"dateOfBirth\": \"1985-07-05\",\r\n\t\"documentType\": \"CITIZENSHIP_CARD\",\r\n\t\"documentNumber\": 91323232323,\r\n\t\"address\": \"Calle siempre viva\",\r\n\t\"phoneNumber\": \"392883920002\",\r\n\t\"password\": \"adfHIBI(983'03Kjdo9330\",\r\n\t\"customerStatus\": \"ACTIVE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8001/pichincha-api/v1/customers",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"pichincha-api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Mar 2023 14:39:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idPerson\": \"b2725fc0-bdc7-4e83-a4bb-615885fa1bee\",\n    \"name\": \"Yesith Valencia\",\n    \"gender\": \"MALE\",\n    \"dateOfBirth\": \"1985-07-05\",\n    \"documentType\": \"CITIZENSHIP_CARD\",\n    \"documentNumber\": 91323232323,\n    \"address\": \"Calle siempre viva\",\n    \"phoneNumber\": \"392883920002\",\n    \"idCustomer\": \"448c93dc-4bf0-46e1-b9b0-7e0894309fa0\",\n    \"password\": \"adfHIBI(983'03Kjdo9330\",\n    \"customerStatus\": \"ACTIVE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Customer by idCustomer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8001/pichincha-api/v1/customers/{{customer_token}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"pichincha-api",
+						"v1",
+						"customers",
+						"{{customer_token}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8001/pichincha-api/v1/customers/{{customer_token}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"pichincha-api",
+								"v1",
+								"customers",
+								"{{customer_token}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Mar 2023 14:41:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Yesith Valencia\",\n    \"gender\": \"MALE\",\n    \"dateOfBirth\": \"1985-07-05\",\n    \"documentType\": \"CITIZENSHIP_CARD\",\n    \"documentNumber\": 91323232323,\n    \"address\": \"Calle siempre viva\",\n    \"phoneNumber\": \"392883920002\",\n    \"customerStatus\": \"ACTIVE\"\n}"
+				},
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8001/pichincha-api/v1/customers/{{customer_token}}0",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"pichincha-api",
+								"v1",
+								"customers",
+								"{{customer_token}}0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Mar 2023 19:45:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": \"CUS-001\",\n    \"errorTittle\": \"No se encontró el cliente \",\n    \"errorMessage\": \"EL cliente con el id [74a2407a-5b7e-474a-be56-7f8eba8d9e1a0] no existe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var response = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"customer_token\", response.idCustomer);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"Yesith Valencia 2\",\r\n\t\"gender\": \"FEMALE\",\r\n\t\"dateOfBirth\": \"1985-12-31\",\r\n\t\"documentType\": \"CITIZENSHIP_CARD\",\r\n\t\"documentNumber\": 913232323239,\r\n\t\"address\": \"Calle siempre viva 9\",\r\n\t\"phoneNumber\": \"3928839200099\",\r\n\t\"password\": \"adfHIBI(983'03Kjdo93309\",\r\n\t\"customerStatus\": \"INACTIVE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8001/pichincha-api/v1/customers/{{customer_token}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"pichincha-api",
+						"v1",
+						"customers",
+						"{{customer_token}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Yesith Valencia 2\",\r\n\t\"gender\": \"FEMALE\",\r\n\t\"dateOfBirth\": \"1985-12-31\",\r\n\t\"documentType\": \"CITIZENSHIP_CARD\",\r\n\t\"documentNumber\": 913232323239,\r\n\t\"address\": \"Calle siempre viva 9\",\r\n\t\"phoneNumber\": \"3928839200099\",\r\n\t\"password\": \"adfHIBI(983'03Kjdo93309\",\r\n\t\"customerStatus\": \"INACTIVE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8001/pichincha-api/v1/customers/{{customer_token}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"pichincha-api",
+								"v1",
+								"customers",
+								"{{customer_token}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Mar 2023 19:48:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idPerson\": \"7076f170-4d7c-49bd-a061-b45c25efab12\",\n    \"name\": \"Yesith Valencia 2\",\n    \"gender\": \"FEMALE\",\n    \"dateOfBirth\": \"1985-12-31\",\n    \"documentType\": \"CITIZENSHIP_CARD\",\n    \"documentNumber\": 913232323239,\n    \"address\": \"Calle siempre viva 9\",\n    \"phoneNumber\": \"3928839200099\",\n    \"idCustomer\": \"dcd8f75a-3962-4e7f-ba1b-d0699af14711\",\n    \"password\": \"adfHIBI(983'03Kjdo93309\",\n    \"customerStatus\": \"INACTIVE\"\n}"
+				},
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Yesith Valencia 2\",\r\n\t\"gender\": \"FEMALE\",\r\n\t\"dateOfBirth\": \"1985-12-31\",\r\n\t\"documentType\": \"CITIZENSHIP_CARD\",\r\n\t\"documentNumber\": 913232323239,\r\n\t\"address\": \"Calle siempre viva 9\",\r\n\t\"phoneNumber\": \"3928839200099\",\r\n\t\"password\": \"adfHIBI(983'03Kjdo93309\",\r\n\t\"customerStatus\": \"INACTIVE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8001/pichincha-api/v1/customers/{{customer_token}}2",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"pichincha-api",
+								"v1",
+								"customers",
+								"{{customer_token}}2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Mar 2023 19:50:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": \"CUS-001\",\n    \"errorTittle\": \"No se encontró el cliente \",\n    \"errorMessage\": \"EL cliente con el id [dcd8f75a-3962-4e7f-ba1b-d0699af147112] no existe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8001/pichincha-api/v1/customers/{{customer_token}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"pichincha-api",
+						"v1",
+						"customers",
+						"{{customer_token}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8001/pichincha-api/v1/customers/{{customer_token}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"pichincha-api",
+								"v1",
+								"customers",
+								"{{customer_token}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Mar 2023 19:53:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "404 Not Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8001/pichincha-api/v1/customers/{{customer_token}}3",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"pichincha-api",
+								"v1",
+								"customers",
+								"{{customer_token}}3"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "JSON",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Mar 2023 19:53:46 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\"errorCode\":\"CUS-001\",\"errorTittle\":\"No se encontró el cliente \",\"errorMessage\":\"EL cliente con el id [eca9eb1d-8c4f-461a-81a2-e6e283b12e243] no existe\"}"
+				}
+			]
+		},
+		{
+			"name": "Create Movement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"date\": \"2023-03-14\",\r\n\t\"movementType\": \"WITHDRAWAL\",\r\n\t\"value\": 575.0,\r\n\t\"accountEntity\": {\r\n\t\t\"idAccount\": \"03d35c2c-0757-43b6-abc5-84b1ddf05df1\"\r\n\t},\r\n\t\"customerEntity\": {\r\n\t\t\"idCustomer\": \"9a0d1902-bf57-4075-b535-f2e7754eb741\"\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8001/pichincha-api/v1/movements",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"pichincha-api",
+						"v1",
+						"movements"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "400 Bad Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"date\": \"2023-03-14\",\r\n\t\"movementType\": \"WITHDRAWAL\",\r\n\t\"value\": 575.0,\r\n\t\"accountEntity\": {\r\n\t\t\"idAccount\": \"03d35c2c-0757-43b6-abc5-84b1ddf05df1\"\r\n\t},\r\n\t\"customerEntity\": {\r\n\t\t\"idCustomer\": \"9a0d1902-bf57-4075-b535-f2e7754eb741\"\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8001/pichincha-api/v1/movements",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"pichincha-api",
+								"v1",
+								"movements"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Mar 2023 23:05:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errorCode\": \"MOV-001\",\n    \"errorTittle\": \"No hay saldo disponible\",\n    \"errorMessage\": \"No se puede debitar [575.0] porque no hay saldo disponible\"\n}"
+				},
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"date\": \"2023-03-14\",\r\n\t\"movementType\": \"WITHDRAWAL\",\r\n\t\"value\": 575.0,\r\n\t\"accountEntity\": {\r\n\t\t\"idAccount\": \"03d35c2c-0757-43b6-abc5-84b1ddf05df1\"\r\n\t},\r\n\t\"customerEntity\": {\r\n\t\t\"idCustomer\": \"9a0d1902-bf57-4075-b535-f2e7754eb741\"\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8001/pichincha-api/v1/movements",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"pichincha-api",
+								"v1",
+								"movements"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 Mar 2023 23:06:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idMovement\": \"6e5488b0-6e13-4e44-9536-d222380e11a4\",\n    \"date\": \"2023-03-14\",\n    \"movementType\": \"WITHDRAWAL\",\n    \"value\": 575,\n    \"accountEntity\": {\n        \"idAccount\": \"03d35c2c-0757-43b6-abc5-84b1ddf05df1\",\n        \"company\": null,\n        \"accountNumber\": null,\n        \"accountType\": null,\n        \"initialBalance\": null,\n        \"balance\": null,\n        \"accountStatus\": null,\n        \"customerEntity\": null\n    },\n    \"customerEntity\": {\n        \"idPerson\": null,\n        \"name\": null,\n        \"gender\": null,\n        \"dateOfBirth\": null,\n        \"documentType\": null,\n        \"documentNumber\": null,\n        \"address\": null,\n        \"phoneNumber\": null,\n        \"idCustomer\": \"9a0d1902-bf57-4075-b535-f2e7754eb741\",\n        \"password\": null,\n        \"customerStatus\": null\n    }\n}"
+				}
+			]
+		}
+	]
+}
