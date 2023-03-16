@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres" uuid="7c6aad82-67ec-4675-ae90-54d6da1ccda0">
+    <data-source source="LOCAL" name="db_pichincha@127.0.0.1" uuid="1d1b2dee-6b7a-40ae-a03b-f984319642eb">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://172.26.0.2:5432/db_pichincha</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/db_pichincha</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
